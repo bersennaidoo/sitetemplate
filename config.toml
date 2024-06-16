@@ -1,13 +1,9 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Shree Kamatcheeammen Temple'
+theme = "sitetheme"
 
 [[menus.main]]
 name = 'Home'
 pageRef = '/'
 weight = 10
-
-[[menus.main]]
-name = "About"
-pageRef = "/about"
-weight = 20
