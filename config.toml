@@ -1,7 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Shree Kamatcheeammen Temple'
-theme = ["github.com/bersennaidoo/bootstrap5theme"]
+theme = "sitetheme"
 
 [[menus.main]]
 name = 'Home'
