@@ -4,6 +4,37 @@ title = 'Shree Kamatcheeammen Temple'
 theme = "bootstraptheme"
 
 [[menus.main]]
-name = 'Home'
+name = 'HOME'
 pageRef = '/'
 weight = 10
+
+[[menus.main]]
+name = "FIND US"
+pageRef = "/find-us"
+weight = 20
+
+[[menus.main]]
+name = "RELIGIOUS SERVICES"
+pageRef = "/religious-services"
+weight = 30
+
+[[menus.main]]
+name = "GALLERIES"
+pageRef = "/galleries"
+weight = 40
+
+[[menus.main]]
+name = "PHOTO GALLERY"
+pageRef = "/galleries/photo-gallery"
+parent = "/galleries"
+weight = 45
+
+[[menus.main]]
+name = "SUPPORT US"
+pageRef = "/support-us"
+weight = 50
+
+[[menus.main]]
+name = "ABOUT US"
+pageRef = "/about-us"
+weight = 60
