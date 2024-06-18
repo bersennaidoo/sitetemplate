@@ -5,30 +5,30 @@ theme = "bootstraptheme"
 
 [[menus.main]]
 name = 'HOME'
-pageRef = '/'
+url = '/'
 weight = 10
 
 [[menus.main]]
 name = "FIND US"
-pageRef = "/find-us"
+url = "/find-us"
 weight = 20
 
 [[menus.main]]
 name = "RELIGIOUS SERVICES"
-pageRef = "/religious-services"
+url = "/religious-services"
 weight = 30
 
 [[menus.main]]
 name = "GALLERIES"
-pageRef = "/galleries"
+url = "/galleries"
 weight = 40
 
 [[menus.main]]
 name = "SUPPORT US"
-pageRef = "/support-us"
+url = "/support-us"
 weight = 50
 
 [[menus.main]]
 name = "ABOUT US"
-pageRef = "/about-us"
+url = "/about-us"
 weight = 60
