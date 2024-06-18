@@ -24,12 +24,6 @@ pageRef = "/galleries"
 weight = 40
 
 [[menus.main]]
-name = "PHOTO GALLERY"
-pageRef = "/galleries/photo-gallery"
-parent = "/galleries"
-weight = 45
-
-[[menus.main]]
 name = "SUPPORT US"
 pageRef = "/support-us"
 weight = 50
