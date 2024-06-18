@@ -24,6 +24,12 @@ url = "/galleries"
 weight = 40
 
 [[menus.main]]
+name = "PHOTO GALLERY"
+url = "/galleries/photo-gallery"
+parent = "/galleries"
+weight = 45
+
+[[menus.main]]
 name = "SUPPORT US"
 url = "/support-us"
 weight = 50
