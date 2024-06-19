@@ -1,51 +1,62 @@
-{{- /*
-Renders a menu for the given menu ID.
-
-@context {page} page The current page.
-@context {string} menuID The menu ID.
-
-@example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-*/}}
-
-{{- $page := .page }}
-{{- $menuID := .menuID }}
-
-{{- with index site.Menus $menuID }}
-  <nav>
-    <ul>
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
-  </nav>
-{{- end }}
-
-{{- define "partials/inline/menu/walk.html" }}
-  {{- $page := .page }}
-  {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL }}
-    {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
-    {{- end }}
-    {{- $name := .Name }}
-    {{- with .Identifier }}
-      {{- with T . }}
-        {{- $name = . }}
-      {{- end }}
-    {{- end }}
-    <li>
-      <a
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}
-            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-          {{- end }}
-        {{- end -}}
-      >{{ $name }}</a>
-      {{- with .Children }}
-        <ul>
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary-theme">
+    <div class="container-fluid">
+      <a class="navbar-brand text-main-theme" href="/">Shree kamatcheeammen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-secondary-theme-l4" aria-current="page" href="/">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-secondary-theme-l4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              FIND US
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/find-us">Overview</a></li>
+              <li><a class="dropdown-item" href="/find-us/how-to-find-us">How to Find Us</a></li>
+              <li><a class="dropdown-item" href="/find-us/shrines-in-temple">Shrines in Temple</a></li>
+              <li><a class="dropdown-item" href="/find-us/temple-pooja-calendar">Temple Pooja Calendar</a></li>
+              <li><a class="dropdown-item" href="/find-us/code-of-conduct">Code Of Conduct</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-secondary-theme-l4" aria-current="page" href="/religious-services">RELIGIOUS SERVICES</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-secondary-theme-l4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              GALLERIES
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/galleries">Overview</a></li>
+              <li><a class="dropdown-item" href="/galleries/photo-gallery">Photo Gallery</a></li>
+              <li><a class="dropdown-item" href="#">Video Gallery</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-secondary-theme-l4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              SUPPORT US
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/support-us">Overview</a></li>
+              <li><a class="dropdown-item" href="/support-us/donations">Donations</a></li>
+              <li><a class="dropdown-item" href="/support-us/volunteer">Volunteers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-secondary-theme-l4" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              ABOUT US
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/about-us">Overview</a></li>
+              <li><a class="dropdown-item" href="/about-us/objectives">Objectives</a></li>
+              <li><a class="dropdown-item" href="/about-us/history-of-temple">History of the Temple</a></li>
+              <li><a class="dropdown-item" href="/about-us/vacancies">Vacancies</a></li>
+              <li><a class="dropdown-item" href="/about-us/contact-us">Contact Us</a></li>
+            </ul>
+          </li>
         </ul>
-      {{- end }}
-    </li>
-  {{- end }}
-{{- end }}
+      </div>
+    </div>
+  </nav>

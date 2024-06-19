@@ -76,3 +76,6 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Utilities API
 @import "./bootstrap/scss/utilities/api";
+
+// custom.scss
+@import "./custom.scss"
