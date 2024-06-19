@@ -1,4 +1,4 @@
-{{- with resources.Get "bootstrap-icons/font/bootstrap-icons.css" }}
+{{- with resources.Get "icons/bootstrap-icons.css" }}
   {{- if eq hugo.Environment "development" }}
     <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
